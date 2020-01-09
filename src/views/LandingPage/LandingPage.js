@@ -18,7 +18,7 @@ import Parallax from "components/Parallax/Parallax.js";
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
-import ProductSection from "./Sections/ProductSection.js";
+// import ProductSection from "./Sections/ProductSection.js";
 import TeamSection from "./Sections/TeamSection.js";
 import WorkSection from "./Sections/WorkSection.js";
 
@@ -34,7 +34,7 @@ export default function LandingPage(props) {
       <Header
         color="transparent"
         routes={dashboardRoutes}
-        brand="ActiNoise Official Site"
+        brand="ActiNoise Demo Site"
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
@@ -48,20 +48,13 @@ export default function LandingPage(props) {
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
               <h1 className={classes.title}>ActiNoise</h1>
-              <h4>
-                Vo:KOPPE(
-                <a href="https://twitter.com/Koppe_AN">@Koppe_AN</a>) <br />
-                Gt:Yuri(
-                <a href="https://twitter.com/yuriii__AN">@yuriii__AN</a>) <br />
-                Gt:KAZ(
-                <a href="https://twitter.com/Y_KAZ_AN">@Y_KAZ_AN</a>) <br />
-                Ba:珠希(
-                <a href="https://twitter.com/tamaki5st_AN">
-                  @tamaki5st_AN
-                </a>) <br />
-                Dr:YO-SUKE(
-                <a href="https://twitter.com/Yousuke_AN">@Yousuke_AN</a>) <br />
-              </h4>
+              <h5>
+                Vo. KOPPE <br />
+                Gt. Yuri <br />
+                Gt. KAZ <br />
+                Ba. 珠希 <br />
+                Dr. YO-SUKE <br />
+              </h5>
               <br />
               <Button
                 color="danger"
@@ -79,7 +72,7 @@ export default function LandingPage(props) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <ProductSection />
+          {/* <ProductSection /> */}
           <TeamSection />
           <WorkSection />
         </div>
