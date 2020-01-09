@@ -70,8 +70,15 @@ export default function Footer(props) {
           </List>
         </div>
         <div className={classes.right}>
-          &copy; {1900 + new Date().getYear()} , made with{" "}
-          <Favorite className={classes.icon} /> by{" "}
+          &copy; {1900 + new Date().getYear()} , Portfolio made by{" "}
+          <a
+            href="https://github.com/dev-sota"
+            className={aClasses}
+            target="_blank"
+          >
+          Sota
+          </a>{" "}
+          based on{" "}
           <a
             href="https://www.creative-tim.com?ref=mkr-footer"
             className={aClasses}

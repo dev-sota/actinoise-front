@@ -64,7 +64,16 @@ export default function WorkSection() {
               />
               <GridContainer style={style}>
                 <GridItem className={classes.textCenter}>
-                  <Button color="primary">Send Message</Button>
+                  <Button
+                    onClick={() =>
+                      alert(
+                        "This product is currently under development. Just a moment, please."
+                      )
+                    }
+                    color="primary"
+                  >
+                    Send Message
+                  </Button>
                 </GridItem>
               </GridContainer>
             </GridContainer>
