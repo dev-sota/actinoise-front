@@ -25,10 +25,7 @@ export default function ProductSection() {
       <div>
         <GridContainer justify="center">
           {/* <GridItem> */}
-          <ReactPlayer
-            url="https://www.youtube.com/watch?v=-d_RuZhuR-k"
-            playing
-          />
+          <ReactPlayer url="https://www.youtube.com/watch?v=-d_RuZhuR-k" />
           {/* </GridItem> */}
         </GridContainer>
       </div>
