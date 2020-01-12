@@ -20,6 +20,14 @@ export default function WorkSection() {
     margin: "auto",
     width: "50%"
   };
+  const handleSubmit = event => {
+    alert(
+      "This product is currently under development. Just a moment, please."
+      // "A name was submitted: " + this.state.value
+    );
+    event.preventDefault();
+  };
+
   return (
     <div className={classes.section}>
       <GridContainer justify="center">
@@ -30,7 +38,7 @@ export default function WorkSection() {
             a few lines about each one and contact us about any further
             collaboration. We will responde get back to you.
           </h4>
-          <form>
+          <form onSubmit={handleSubmit}>
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
                 <CustomInput
@@ -64,14 +72,7 @@ export default function WorkSection() {
               />
               <GridContainer style={style}>
                 <GridItem className={classes.textCenter}>
-                  <Button
-                    onClick={() =>
-                      alert(
-                        "This product is currently under development. Just a moment, please."
-                      )
-                    }
-                    color="primary"
-                  >
+                  <Button type="submit" value="Submit" color="primary">
                     Send Message
                   </Button>
                 </GridItem>
