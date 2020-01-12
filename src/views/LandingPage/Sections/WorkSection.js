@@ -1,13 +1,14 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
 
 // @material-ui/icons
 
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
 import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
@@ -15,64 +16,66 @@ import styles from "assets/jss/material-kit-react/views/landingPageSections/work
 const useStyles = makeStyles(styles);
 
 export default function WorkSection() {
+  const { register, handleSubmit } = useForm();
+  const onSubmit = data => {
+    console.log(data);
+    alert("Please take a look at console. Print data in console.");
+  };
   const classes = useStyles();
   const style = {
     margin: "auto",
     width: "50%"
   };
-  const handleSubmit = event => {
-    alert(
-      "This product is currently under development. Just a moment, please."
-      // "A name was submitted: " + this.state.value
-    );
-    event.preventDefault();
-  };
-
   return (
     <div className={classes.section}>
       <GridContainer justify="center">
         <GridItem cs={12} sm={12} md={8}>
           <h2 className={classes.title}>CONTACT US</h2>
           <h4 className={classes.description}>
-            Divide details about band activity or support work into parts. Write
-            a few lines about each one and contact us about any further
-            collaboration. We will responde get back to you.
+            If you have an account on twitter, please send us a{" "}
+            <a href="https://twitter.com/ActiNoise" target="blank">
+              direct message
+            </a>
+            . <br />
+            We will responde get back to you.
           </h4>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
-                <CustomInput
-                  labelText="Your Name"
-                  id="name"
-                  formControlProps={{
-                    fullWidth: true
-                  }}
+                <TextField
+                  label="Your Name"
+                  name="name"
+                  inputRef={register}
+                  fullWidth={true}
+                  margin="normal"
+                  required
                 />
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>
-                <CustomInput
-                  labelText="Your Email"
-                  id="email"
-                  formControlProps={{
-                    fullWidth: true
-                  }}
+                <TextField
+                  label="Your Email"
+                  name="email"
+                  inputRef={register}
+                  fullWidth={true}
+                  margin="normal"
+                  required
                 />
               </GridItem>
-              <CustomInput
-                labelText="Your Message"
-                id="message"
-                formControlProps={{
-                  fullWidth: true,
-                  className: classes.textArea
-                }}
-                inputProps={{
-                  multiline: true,
-                  rows: 5
-                }}
-              />
+              <GridItem md={12}>
+                <TextField
+                  label="Your Message"
+                  name="message"
+                  inputRef={register}
+                  fullWidth={true}
+                  margin="normal"
+                  multiline
+                  rows="5"
+                  required
+                />
+              </GridItem>
               <GridContainer style={style}>
                 <GridItem className={classes.textCenter}>
-                  <Button type="submit" value="Submit" color="primary">
+                  <Button type="submit" color="primary">
                     Send Message
                   </Button>
                 </GridItem>

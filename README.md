@@ -17,6 +17,8 @@ At present, we officially aim to support the last two versions of the following 
 
 - [yarn](https://qiita.com/rubytomato@github/items/1696530bb9fd59aa28d8)
 - [Firebase](https://breakthrough-tech.yuta-u.com/react/deploy-by-firebase/)
+- [React Hook Form](https://react-hook-form.com/jp/get-started/)
+- [TextField API](https://material-ui.com/api/text-field/)
 - [Free Products](https://www.creative-tim.com/bootstrap-themes/free) from Creative Tim
 
 ## File Structure
