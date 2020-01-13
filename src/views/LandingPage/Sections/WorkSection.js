@@ -19,7 +19,7 @@ export default function WorkSection() {
   const { register, handleSubmit } = useForm();
   const onSubmit = data => {
     console.log(data);
-    alert("API server Is In development. Print form data in console.");
+    alert("API server is in development. Print form data in console.");
   };
   const classes = useStyles();
   const style = {
