@@ -1,14 +1,11 @@
 import React from "react";
-import { useForm } from "react-hook-form";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
-
-// @material-ui/icons
 
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
+import CustomInput from "components/CustomInput/CustomInput.js";
 import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
@@ -16,11 +13,6 @@ import styles from "assets/jss/material-kit-react/views/landingPageSections/work
 const useStyles = makeStyles(styles);
 
 export default function WorkSection() {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = data => {
-    console.log(data);
-    alert("API server is in development. Print form data in console.");
-  };
   const classes = useStyles();
   const style = {
     margin: "auto",
@@ -39,45 +31,43 @@ export default function WorkSection() {
             . <br />
             We will responde get back to you.
           </h4>
-          <form
-            name="Contact Form"
-            method="POST"
-            netlify
-            onSubmit={handleSubmit(onSubmit)}
-          >
+          <form name="contact" method="POST" data-netlify="true">
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
-                <TextField
-                  label="Your Name"
+                <CustomInput
+                  labelText="Your Name"
+                  id="name"
                   name="name"
-                  inputRef={register}
-                  fullWidth={true}
-                  margin="normal"
-                  required
+                  type="text"
+                  formControlProps={{
+                    fullWidth: true
+                  }}
                 />
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>
-                <TextField
-                  label="Your Email"
+                <CustomInput
+                  labelText="Your Email"
+                  id="email"
                   name="email"
-                  inputRef={register}
-                  fullWidth={true}
-                  margin="normal"
-                  required
+                  type="email"
+                  formControlProps={{
+                    fullWidth: true
+                  }}
                 />
               </GridItem>
-              <GridItem md={12}>
-                <TextField
-                  label="Your Message"
-                  name="message"
-                  inputRef={register}
-                  fullWidth={true}
-                  margin="normal"
-                  multiline
-                  rows="5"
-                  required
-                />
-              </GridItem>
+              <CustomInput
+                labelText="Your Message"
+                id="message"
+                name="message"
+                formControlProps={{
+                  fullWidth: true,
+                  className: classes.textArea
+                }}
+                inputProps={{
+                  multiline: true,
+                  rows: 5
+                }}
+              />
               <GridContainer style={style}>
                 <GridItem className={classes.textCenter}>
                   <Button type="submit" color="primary">
