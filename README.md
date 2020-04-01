@@ -1,4 +1,4 @@
-# [ActiNoise Demo Site](https://actinoise-demo.firebaseapp.com/) 
+# [ActiNoise Demo Site]
 
 ## Versions
 
