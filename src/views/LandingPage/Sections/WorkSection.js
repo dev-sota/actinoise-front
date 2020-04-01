@@ -39,7 +39,12 @@ export default function WorkSection() {
             . <br />
             We will responde get back to you.
           </h4>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form
+            name="Contact Form"
+            method="POST"
+            netlify
+            onSubmit={handleSubmit(onSubmit)}
+          >
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
                 <TextField
