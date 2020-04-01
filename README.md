@@ -1,4 +1,4 @@
-# [ActiNoise Demo Site]
+# ActiNoise Demo Site
 
 ## Versions
 
