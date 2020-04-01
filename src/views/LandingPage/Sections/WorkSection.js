@@ -31,7 +31,17 @@ export default function WorkSection() {
             . <br />
             We will responde get back to you.
           </h4>
-          <form name="contact" method="POST" data-netlify="true">
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+          >
+            {/* NetlifyFormで必要な値 */}
+            <input type="hidden" name="bot-field" />
+            {/* NetlifyFormで必要な値 */}
+            <input type="hidden" name="form-name" />
+
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
                 <CustomInput
